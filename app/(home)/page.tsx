@@ -1,3 +1,4 @@
 export default async function Home() {
-  return <div>N Starter</div>;
+  return <h1 className="text-2xl text-green-500">Netflix Clone</h1>;
 }
+

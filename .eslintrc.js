@@ -1,6 +1,7 @@
 module.exports = {
   extends: [
     'next/core-web-vitals',
+    'eslint:recommended',
     'plugin:jest-dom/recommended',
     'plugin:testing-library/react',
     'plugin:deprecation/recommended',
@@ -63,6 +64,7 @@ module.exports = {
       },
     ],
     'no-console': 'error',
+    'no-return-await': 'error',
     'no-var': 'error',
     'no-unused-vars': 'off',
     'react/display-name': 'error',
@@ -120,6 +122,7 @@ module.exports = {
     'jest.setup.js',
   ],
   globals: {
+    globalThis: true,
     expect: true,
     describe: true,
     it: true,
