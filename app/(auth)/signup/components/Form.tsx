@@ -1,6 +1,7 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import Input from '@/components/Input';
@@ -11,6 +12,7 @@ import { signUpSchema } from '../schema';
 
 export default function Form() {
   const {
+    reset,
     register,
     handleSubmit,
     formState: { isValid, errors },
@@ -19,8 +21,16 @@ export default function Form() {
     resolver: zodResolver(signUpSchema),
   });
 
-  const onSubmit = (data: SignUp) => {
-    signUp(data);
+  const onSubmit = async (data: SignUp) => {
+    await signUp(data);
+
+    await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      callbackUrl: '/',
+    });
+
+    reset();
   };
 
   return (

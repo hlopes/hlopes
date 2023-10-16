@@ -11,6 +11,7 @@ import { signInSchema } from '../schema';
 
 export default function Form() {
   const {
+    reset,
     register,
     handleSubmit,
     formState: { isValid, errors },
@@ -19,12 +20,14 @@ export default function Form() {
     resolver: zodResolver(signInSchema),
   });
 
-  const onSubmit = ({ email, password }: SignIn) => {
-    signIn('credentials', {
+  const onSubmit = async ({ email, password }: SignIn) => {
+    await signIn('credentials', {
       email,
       password,
       callbackUrl: '/',
     });
+
+    reset();
   };
 
   return (

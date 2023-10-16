@@ -6,7 +6,7 @@ import { authOptions } from '@/lib/authOptions';
 export async function redirectWithoutSession() {
   const session = await getServerSession(authOptions);
 
-  if (session == null) {
+  if (session === null) {
     return redirect('/signin');
   }
 }

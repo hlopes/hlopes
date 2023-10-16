@@ -2,9 +2,13 @@ import Link from 'next/link';
 
 import SocialAuth from '@/components/SocialAuth';
 
+import { redirectWithSession } from '../actions';
+
 import Form from './components/Form';
 
-export default function SignUp() {
+export default async function SignUp() {
+  await redirectWithSession();
+
   return (
     <>
       <h2 className="text-4xl font-semibold text-white mb-9">Sign Up</h2>
