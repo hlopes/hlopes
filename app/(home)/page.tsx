@@ -9,8 +9,7 @@ export default async function Home() {
   return (
     <>
       <h1 className="text-2xl text-green-500">Netflix Clone</h1>
-      <h1 className="text-2xl text-green-500">{session?.user?.name}</h1>
-      <h1 className="text-2xl text-green-500">{session?.user?.email}</h1>
+      <p className="text-white">Logged in as : {session?.user?.name}</p>
       <SignOutButton />
     </>
   );

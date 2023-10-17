@@ -2,12 +2,16 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
-const PROTECTED_ROUTES = ['/'];
+const PROTECTED_ROUTES = ['/', '/profiles'];
 
 const PUBLIC_ROUTES = ['/signin', '/signup'];
 
 async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
+
+  if (req.method !== 'GET') {
+    return NextResponse.next();
+  }
 
   const token = await getToken({
     req,
