@@ -3,11 +3,7 @@ import { getServerSession } from 'next-auth';
 import SignOutButton from '@/components/SignOutButton';
 import { authOptions } from '@/lib/authOptions';
 
-import { redirectWithoutSession } from './actions';
-
 export default async function Home() {
-  await redirectWithoutSession();
-
   const session = await getServerSession(authOptions);
 
   return (
