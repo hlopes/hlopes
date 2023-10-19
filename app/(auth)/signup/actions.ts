@@ -1,10 +1,10 @@
 'use server';
 
 import bcrypt from 'bcrypt';
-import type { User } from '@prisma/client';
 
 import type { ErrorResponse } from '@/app/types';
 import prismadb from '@/lib/prismadb';
+import type { User } from '@/prisma/generated/client';
 
 import type { SignUp } from './schema';
 
