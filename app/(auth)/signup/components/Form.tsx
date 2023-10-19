@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -11,6 +12,8 @@ import type { SignUp } from '../schema';
 import { signUpSchema } from '../schema';
 
 export default function Form() {
+  const [errorMessage, setErrorMessage] = useState('');
+
   const {
     reset,
     register,
@@ -22,15 +25,21 @@ export default function Form() {
   });
 
   const onSubmit = async (data: SignUp) => {
-    await signUp(data);
+    reset();
+
+    const result = await signUp(data);
+
+    if ('error' in result) {
+      setErrorMessage(result.error.message);
+
+      return;
+    }
 
     await signIn('credentials', {
       email: data.email,
       password: data.password,
       callbackUrl: '/',
     });
-
-    reset();
   };
 
   return (
@@ -55,6 +64,9 @@ export default function Form() {
         aria-disabled={!isValid}>
         Sign up
       </button>
+      {errorMessage ? (
+        <p className="mt-4 text-center text-red-600">{errorMessage}</p>
+      ) : null}
     </form>
   );
 }
