@@ -2,7 +2,12 @@
 const nextConfig = {
   output: 'standalone',
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: [
+      'upload.wikimedia.org',
+      'uhdtv.io',
+      'mango.blender.org',
+      'download.blender.org',
+    ],
   },
   experimental: {
     serverActions: true,
