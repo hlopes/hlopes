@@ -1,5 +1,6 @@
-import React from 'react';
 import type { Movie } from '@prisma/client';
+
+import getCurrentUser from '@/actions/getCurrentUser';
 
 import MovieCard from './MovieCard';
 
@@ -8,7 +9,12 @@ type MovieListProps = {
   movies: Movie[];
 };
 
-export default function MovieList({ title, movies = [] }: MovieListProps) {
+export default async function MovieList({
+  title,
+  movies = [],
+}: MovieListProps) {
+  const currentUser = await getCurrentUser();
+
   if (!movies.length) {
     return null;
   }
@@ -20,9 +26,13 @@ export default function MovieList({ title, movies = [] }: MovieListProps) {
           {title}
         </p>
         <div className="grid grid-cols-4 gap-2">
-          {movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
-          ))}
+          {movies.map((movie) => {
+            const isFavorite = currentUser.favoriteIds.includes(movie.id);
+
+            return (
+              <MovieCard key={movie.id} movie={movie} isFavorite={isFavorite} />
+            );
+          })}
         </div>
       </div>
     </div>

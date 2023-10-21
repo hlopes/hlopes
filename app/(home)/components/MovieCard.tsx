@@ -4,11 +4,17 @@ import { BsPlayFill } from 'react-icons/bs';
 import Image from 'next/image';
 import type { Movie } from '@prisma/client';
 
+import FavoriteButton from './FavoriteButton';
+
 type MovieCardProps = {
   movie: Movie;
+  isFavorite: boolean;
 };
 
-export default function MovieCard({ movie }: MovieCardProps) {
+export default function MovieCard({
+  movie,
+  isFavorite = false,
+}: MovieCardProps) {
   return (
     <div className="group bg.-zinc-900 col-span relative h-[12w]">
       <Image
@@ -33,10 +39,10 @@ export default function MovieCard({ movie }: MovieCardProps) {
               onClick={() => {}}>
               <BsPlayFill size={30} />
             </div>
+            <FavoriteButton movieId={movie.id} isFavorite={isFavorite} />
           </div>
 
           <p className="mt-4 font-semibold text-green-400">
-            {' '}
             New <span className="text-white">2023</span>
           </p>
 
