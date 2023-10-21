@@ -1,8 +1,7 @@
 import Navbar from '@/components/Navbar';
 
 import { getFavorites } from './actions/favorites';
-import getMovies from './actions/getMovies';
-import getRandomMovie from './actions/getRandomMovie';
+import { getMovies, getRandomMovie } from './actions/movies';
 import Billboard from './components/Billboard';
 import MovieList from './components/MovieList';
 

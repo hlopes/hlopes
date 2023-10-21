@@ -2,6 +2,7 @@
 
 import { BsPlayFill } from 'react-icons/bs';
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Movie } from '@prisma/client';
 
 import FavoriteButton from './FavoriteButton';
@@ -34,11 +35,11 @@ export default function MovieCard({
         />
         <div className="absolute z-10 w-full p-2 transition shadow-md bg-zinc-800 lg-p-4 rounded-b-md">
           <div className="flex items-center gap-3">
-            <div
+            <Link
               className="flex items-center justify-center w-6 h-6 transition bg-white rounded-full cursor-pointer lg:w-10 lg:h-10 hover:bg-neutral-300"
-              onClick={() => {}}>
-              <BsPlayFill size={30} />
-            </div>
+              href={`/watch/${movie.id}`}>
+              <BsPlayFill size="20" />
+            </Link>
             <FavoriteButton movieId={movie.id} isFavorite={isFavorite} />
           </div>
 
