@@ -29,7 +29,7 @@ export default function Form() {
 
     const result = await signUp(data);
 
-    if ('error' in result) {
+    if ('error' in result && result.error.message) {
       setErrorMessage(result.error.message);
 
       return;
