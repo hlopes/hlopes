@@ -2,7 +2,7 @@
 
 ![application screenshot](docs/screenshot.png)
 
-The application is based Code With Antonio tutorial [here](https://www.youtube.com/watch?v=mqUN4N2q4qY). This application includes the usage of Next Auth library with credentials, Github and Google providers to address the authentication. For the data layer it uses the MongoDB as database and Prisma as ORM. 
+The application is based Code With Antonio tutorial [here](https://www.youtube.com/watch?v=mqUN4N2q4qY). This application includes the usage of Next Auth library with credentials, Github and Google providers to address the authentication. For the data layer it uses the MongoDB as database and Prisma as ORM. For the overall styling the library chosen was the Tailwind CSS. Finally, Zustand was used for a cross small data management.
 
 Decided to add the following tweaks to the application:
 
