@@ -14,7 +14,7 @@ export default async function Watch({
     <div className="w-screen h-screen bg-black ">
       <nav className="fixed z-10 flex items-center w-full gap-8 p-4 bg-black bg-opacity-70">
         <Link href="/">
-          <AiOutlineArrowLeft className="text-white" size="40" />
+          <AiOutlineArrowLeft className="text-white" size="30" />
         </Link>
         <p className="font-bold text-white text-1xl md:text-3xl">
           <span className="font-light">Watching:</span>
