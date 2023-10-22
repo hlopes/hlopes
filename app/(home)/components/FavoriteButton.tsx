@@ -14,7 +14,7 @@ export default function FavoriteButton({
   isFavorite,
 }: FavoriteButtonProps) {
   return (
-    <div
+    <button
       className="flex items-center justify-center w-6 h-6 transition border-2 border-white rounded-full cursor-pointer group/item lg:w-10 lg:h-10 hover:border-neutral-300"
       onClick={() =>
         isFavorite ? removeFavorite(movieId) : addFavorite(movieId)
@@ -24,6 +24,6 @@ export default function FavoriteButton({
       ) : (
         <AiOutlinePlus className="text-white button-icon" />
       )}
-    </div>
+    </button>
   );
 }

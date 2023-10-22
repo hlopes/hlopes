@@ -1,13 +1,15 @@
 'use client';
 
 import Image from 'next/image';
-import { signOut } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 
 type AccountMenuProps = {
   visible?: boolean;
 };
 
 export default function AccountMenu({ visible }: AccountMenuProps) {
+  const { data } = useSession({ required: true });
+
   if (!visible) {
     return null;
   }
@@ -24,7 +26,7 @@ export default function AccountMenu({ visible }: AccountMenuProps) {
             height="32"
           />
           <p className="text-sm text-white group-hover/item:underline">
-            Username
+            {data?.user?.name}
           </p>
         </div>
         <hr className="h-px my-4 bg-gray-600 border-0" />

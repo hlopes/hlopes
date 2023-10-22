@@ -1,17 +1,16 @@
 import { create } from 'zustand';
+import type { Movie } from '@prisma/client';
 
 type ModalStore = {
-  movieId?: string;
-  isOpen: boolean;
-  openModal(movieId: string): void;
+  movie?: Movie;
+  openModal(movie: Movie): void;
   closeModal(): void;
 };
 
 const useInfoModal = create<ModalStore>((set) => ({
-  movieId: undefined,
-  isOpen: false,
-  openModal: (movieId: string) => set({ isOpen: true, movieId }),
-  closeModal: () => set({ isOpen: false, movieId: undefined }),
+  movie: undefined,
+  openModal: (movie: Movie) => set({ movie }),
+  closeModal: () => set({ movie: undefined }),
 }));
 
 export default useInfoModal;

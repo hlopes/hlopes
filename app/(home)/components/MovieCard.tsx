@@ -1,9 +1,12 @@
 'use client';
 
+import { BiChevronDown } from 'react-icons/bi';
 import { BsPlayFill } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Movie } from '@prisma/client';
+
+import useInfoModal from '@/hooks/useInfoModal';
 
 import FavoriteButton from './FavoriteButton';
 
@@ -16,6 +19,8 @@ export default function MovieCard({
   movie,
   isFavorite = false,
 }: MovieCardProps) {
+  const { openModal } = useInfoModal();
+
   return (
     <article className="group bg-zinc-900 col-span relative h-full md:h-[12vw]">
       <Image
@@ -34,13 +39,18 @@ export default function MovieCard({
           height="185"
         />
         <div className="absolute z-10 flex items-center justify-between w-full p-2 transition shadow-md bg-zinc-800 lg:p-4 rounded-b-md md:flex-col md:items-start">
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center justify-between w-full gap-2 md:gap-3">
             <Link
-              className="flex items-center justify-center w-6 h-6 transition bg-white rounded-full cursor-pointer lg:w-10 lg:h-10 hover:bg-neutral-300"
+              className="flex items-center justify-center w-6 h-6 transition bg-white rounded-full lg:w-10 lg:h-10 hover:bg-neutral-300"
               href={`/watch/${movie.id}`}>
               <BsPlayFill className="button-icon" />
             </Link>
             <FavoriteButton movieId={movie.id} isFavorite={isFavorite} />
+            <button
+              onClick={() => openModal(movie)}
+              className="flex items-center justify-center w-6 h-6 ml-auto transition border-2 border-white rounded-full group/item lg:w-10 lg:h-10 hover:border-neutral-300">
+              <BiChevronDown className="text-white group-hover/item:text-neutral-300 button-icon" />
+            </button>
           </div>
           <div className="flex items-center justify-center gap-2 md:flex-col md:mt-4 md:items-start">
             <p className="font-semibold text-green-400">
