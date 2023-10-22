@@ -1,5 +1,7 @@
 # Netflix Clone ⚛️
 
+![application screenshot](docs/screenshot.png)
+
 The application is based Code With Antonio tutorial [here](https://www.youtube.com/watch?v=mqUN4N2q4qY). This application includes the usage of Next Auth library with credentials, Github and Google providers to address the authentication. For the data layer it uses the MongoDB as database and Prisma as ORM. 
 
 Decided to add the following tweaks to the application:
