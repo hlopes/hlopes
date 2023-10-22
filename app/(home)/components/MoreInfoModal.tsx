@@ -19,8 +19,6 @@ export default function MoreInfoModal({ favorites = [] }: MoreInfoModalProps) {
     return null;
   }
 
-  console.log('### movie', movie);
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto transition duration-300 bg-black bg-opacity-80">
       <div className="relative w-auto max-w-3xl mx-auto overflow-hidden rounded-md animate-fade animate-once animate-duration-600 animate-delay-100 animate-ease-in-out animate-normal animate-fill-both">
