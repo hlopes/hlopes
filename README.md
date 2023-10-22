@@ -1,15 +1,22 @@
-# Easy Money 💰 ⚛️
+# Netflix Clone ⚛️
 
-The application is a really simple one. Users can add bank accounts and transactions (incomes or expenses). With that information the users can have an overview of all incomes and expenses in the dashboard.
+The application is based Code With Antonio tutorial [here](https://www.youtube.com/watch?v=mqUN4N2q4qY). This application includes the usage of Next Auth library with credentials, Github and Google providers to address the authentication. For the data layer it uses the MongoDB as database and Prisma as ORM. 
 
-[Vercel Demo](https://easy-money-git-main-hlopes.vercel.app/) | [Netlify Demo](https://relaxed-gnome-88a9f6.netlify.app/)
+Decided to add the following tweaks to the application:
+
+* Used the NextJS App router with RSCs;
+* Used experimental server actions;
+* Used the Next Auth middleware instead of manually deal with unauthenticated users;
+* Added minor improves to the mobile design;
+* Used React Hook Form to manage the Sign In and Sign Up forms (with zod validation);
+* Used Link and Image NextJS components;
 
 #### Get Started
 
 To set up the app execute the following commands.
 
 ```bash
-git clone https://github.com/hlopes/easy-money.git
+git clone https://github.com/hlopes/netflix-clone.git
 cd easy-money
 cp .env.example .env
 pnpm install
@@ -31,16 +38,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](./deployment.md)
-
-## Documentation:
-
-- [🛢️ Data Model](docs/data-model.md)
-- [🔧 Configuration](docs/configuration.md)
-- [✨ Code Style](docs/code-style.md)
-- [📁 Project Structure](https://nextjs.org/docs/getting-started/project-structure)
-- [🌈 Components And Styling](docs/components-and-styling.md)
-- [🔒 Authentication](https://clerk.com/)
-- [🤖 Testing](docs/testing.md)
-- [🚀 Performance](https://nextjs.org/docs/app/building-your-application/optimizing)
-- [📦 Deployment](docs/deployment.md)
-- [📚 Additional Resources](docs/resources.md)

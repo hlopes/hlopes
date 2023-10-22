@@ -38,7 +38,7 @@ export default function MovieCard({
             <Link
               className="flex items-center justify-center w-6 h-6 transition bg-white rounded-full cursor-pointer lg:w-10 lg:h-10 hover:bg-neutral-300"
               href={`/watch/${movie.id}`}>
-              <BsPlayFill size="20" />
+              <BsPlayFill className="button-icon" />
             </Link>
             <FavoriteButton movieId={movie.id} isFavorite={isFavorite} />
           </div>

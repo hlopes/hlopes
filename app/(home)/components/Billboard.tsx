@@ -28,7 +28,7 @@ export default function Billboard({ movie }: BillboardProps) {
         <div className="flex items-center gap-3 mt-3 md:mt-4">
           <PlayButton movieId={movie.id} />
           <button className="flex items-center w-auto px-2 py-1 text-xs text-white transition bg-white rounded-md bg-opacity-30 md:py-2 md-px4 lg:text-lg hover:bg-opacity-20">
-            <AiOutlineInfoCircle className="mr-1" />
+            <AiOutlineInfoCircle className="mr-1 button-icon" />
             More Info
           </button>
         </div>

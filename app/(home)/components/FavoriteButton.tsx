@@ -20,9 +20,9 @@ export default function FavoriteButton({
         isFavorite ? removeFavorite(movieId) : addFavorite(movieId)
       }>
       {isFavorite ? (
-        <AiOutlineCheck className="text-white" size="20" />
+        <AiOutlineCheck className="text-white button-icon" />
       ) : (
-        <AiOutlinePlus className="text-white" size="20" />
+        <AiOutlinePlus className="text-white button-icon" />
       )}
     </div>
   );
