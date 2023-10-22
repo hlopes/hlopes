@@ -22,7 +22,7 @@ export default function Billboard({ movie }: BillboardProps) {
         <p className="h-full text-white text-1-xl md:text-5xl w-[50%] lg:text-6xl font-bold drop-shadow-xl">
           {movie.title}
         </p>
-        <p className="text-white text-[8px] md:text-lg mt-3 md:mt-8 w-[90%] md:w-[80%] lg:w-[50%] drop-shadow-xl">
+        <p className="text-white text-xs md:text-lg mt-3 md:mt-8 w-[90%] md:w-[80%] lg:w-[50%] drop-shadow-xl">
           {movie.description}
         </p>
         <div className="flex items-center gap-3 mt-3 md:mt-4">
