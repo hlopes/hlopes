@@ -1,9 +1,9 @@
 'use client';
 
 import { AiOutlineInfoCircle } from 'react-icons/ai';
-import type { Movie } from '@prisma/client';
 
 import useInfoModal from '@/hooks/useInfoModal';
+import type { Movie } from '@/prisma/generated/client';
 
 type MoreInfoButtonProps = {
   movie: Movie;

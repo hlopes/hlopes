@@ -4,9 +4,9 @@ import { BiChevronDown } from 'react-icons/bi';
 import { BsPlayFill } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { Movie } from '@prisma/client';
 
 import useInfoModal from '@/hooks/useInfoModal';
+import type { Movie } from '@/prisma/generated/client';
 
 import FavoriteButton from './FavoriteButton';
 

@@ -1,6 +1,5 @@
-import type { Movie } from '@prisma/client';
-
 import getCurrentUser from '@/actions/getCurrentUser';
+import type { Movie } from '@/prisma/generated/client';
 
 import MovieCard from './MovieCard';
 

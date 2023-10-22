@@ -44,7 +44,7 @@ async function removeFavorite(movieId: string) {
   }
 
   const updatedFavoriteList = currentUser?.favoriteIds.filter(
-    (id) => id !== movieId
+    (id: string) => id !== movieId
   );
 
   const updatedUser = await prismadb.user.update({

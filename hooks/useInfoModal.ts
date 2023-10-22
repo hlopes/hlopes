@@ -1,5 +1,6 @@
 import { create } from 'zustand';
-import type { Movie } from '@prisma/client';
+
+import type { Movie } from '@/prisma/generated/client';
 
 type ModalStore = {
   movie?: Movie;

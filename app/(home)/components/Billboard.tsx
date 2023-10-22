@@ -1,4 +1,4 @@
-import type { Movie } from '@prisma/client';
+import type { Movie } from '@/prisma/generated/client';
 
 import MoreInfoButton from './MoreInfoButton';
 import PlayButton from './PlayButton';
